@@ -1,4 +1,4 @@
-package com.qa.webservices;
+package com.qa.service.webservices;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import com.qa.constants.AccountConstants;
 
 @RestController
-public class ConsumePrizeGenerator {
+public class ConsumePrizeGenerator implements IConsumePrizeGenerator {
 	
 	  @Autowired
 	   RestTemplate restTemplate;

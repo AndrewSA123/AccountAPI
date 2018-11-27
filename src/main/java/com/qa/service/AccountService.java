@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 import com.qa.constants.AccountConstants;
 import com.qa.persistence.domain.Account;
 import com.qa.persistence.repository.IAccountRepo;
-import com.qa.webservices.IConsumeAccNums;
-import com.qa.webservices.IConsumePrizeGenerator;
+import com.qa.service.webservices.IConsumeAccNums;
+import com.qa.service.webservices.IConsumePrizeGenerator;
 
 @Service
 public class AccountService implements IAccountService {

@@ -1,4 +1,4 @@
-package com.qa.webservices;
+package com.qa.service.webservices;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 import com.qa.constants.AccountConstants;
 
 @RestController
-public class ConsumeAccountNumber {
+public class ConsumeAccountNumber implements IConsumeAccNums {
 	
 	   @Autowired
 	   RestTemplate restTemplate;
