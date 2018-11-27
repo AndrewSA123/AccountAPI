@@ -16,4 +16,6 @@ public interface IAccountService {
 
 	public String updateAccount(Long id, Account account);
 
+	String getPrize(Long id);
+
 }

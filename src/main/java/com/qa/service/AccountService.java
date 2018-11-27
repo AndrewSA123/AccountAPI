@@ -8,15 +8,30 @@ import org.springframework.stereotype.Service;
 import com.qa.constants.AccountConstants;
 import com.qa.persistence.domain.Account;
 import com.qa.persistence.repository.IAccountRepo;
+import com.qa.webservices.IConsumeAccNums;
+import com.qa.webservices.IConsumePrizeGenerator;
 
 @Service
 public class AccountService implements IAccountService {
 
 	@Autowired
 	private IAccountRepo repo;
-
+	
+	@Autowired
+	private IConsumeAccNums consumeAccount;
+	
+	@Autowired
+	private IConsumePrizeGenerator consumePrize;
+	
+	
+	@Override
+	public String getPrize(Long id) {
+		return consumePrize.getPrize(repo.findById(id).get().getAccountNumber());
+	}
+	
 	@Override
 	public Account createAccount(Account account) {
+		account.setAccountNumber(consumeAccount.getAccountNumber());
 		return repo.save(account);
 	}
 
