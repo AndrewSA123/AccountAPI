@@ -8,4 +8,5 @@ import com.qa.persistence.domain.Account;
 @Repository
 public interface IAccountRepo extends CrudRepository<Account, Long> {
 
+
 }

@@ -9,5 +9,6 @@ public class AccountConstants {
 	public static final String CREATE_ACCOUNT = "Account successfully created!";
 	public static final String DELETE_ACCOUNT = "Account successfully deleted!";
 	public static final String ACCOUNT_NOT_FOUND = "Account not found";
+	public static final String ACCOUNT_UPDATED = "Account updated!";
 
 }

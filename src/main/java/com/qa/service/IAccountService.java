@@ -14,4 +14,6 @@ public interface IAccountService {
 
 	public Iterable<Account> getAllAccounts();
 
+	public String updateAccount(Long id, Account account);
+
 }

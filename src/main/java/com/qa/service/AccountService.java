@@ -38,4 +38,16 @@ public class AccountService implements IAccountService {
 		return repo.findAll();
 	}
 
+	@Override
+	public String updateAccount(Long id, Account account) {
+		if (repo.findById(id) != null) {
+			Account oldAccount = repo.findById(id).get();
+			oldAccount.setFirstName(account.getFirstName());
+			oldAccount.setLastName(account.getLastName());
+			oldAccount.setAccountNumber(account.getAccountNumber());
+			return AccountConstants.ACCOUNT_UPDATED;
+		}
+		return AccountConstants.ACCOUNT_NOT_FOUND;
+	}
+
 }
