@@ -22,14 +22,16 @@ public class AccountService implements IAccountService {
 
 	@Override
 	public String deleteAccount(Long id) {
-		repo.deleteById(id);
-		return AccountConstants.DELETE_ACCOUNT;
+		if (repo.findById(id) != null) {
+			repo.deleteById(id);
+			return AccountConstants.DELETE_ACCOUNT;
+		}
+		return AccountConstants.ACCOUNT_NOT_FOUND;
 	}
 
 
 	@Override
 	public Optional<Account> findAccount(Long id) {
-
 		return repo.findById(id);
 	}
 
