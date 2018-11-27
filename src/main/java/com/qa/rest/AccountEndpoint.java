@@ -1,6 +1,6 @@
 package com.qa.rest;
 
-import java.util.Collection;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,37 +24,32 @@ public class AccountEndpoint implements IAccountEndpoint {
 
 	@Override
 	@GetMapping("/getall")
-	public Collection<Account> getAllAccounts() {
-		// TODO Auto-generated method stub
+	public Iterable<Account> getAllAccounts() {
 		return service.getAllAccounts();
 	}
 
 	@Override
 	@GetMapping("/find/{id}")
-	public Account findAccount(@PathVariable Long id) {
-		// TODO Auto-generated method stub
+	public Optional<Account> findAccount(@PathVariable Long id) {
 		return service.findAccount(id);
 	}
 
 	@Override
 	@PostMapping("/create")
-	public String createAccount(@RequestBody Account account) {
-		// TODO Auto-generated method stub
+	public Account createAccount(@RequestBody Account account) {
 		return service.createAccount(account);
 	}
 
 	@Override
 	@PutMapping("/update/{id}")
 	public String updateAccount(@PathVariable Long id, @RequestBody Account account) {
-		// TODO Auto-generated method stub
 		return service.updateAccount(id, account);
 	}
 
 	@Override
 	@DeleteMapping("/delete/{id}")
 	public String deleteAccount(@PathVariable Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return service.deleteAccount(id);
 	}
 
 }

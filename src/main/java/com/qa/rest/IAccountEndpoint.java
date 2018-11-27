@@ -1,16 +1,16 @@
 package com.qa.rest;
 
-import java.util.Collection;
+import java.util.Optional;
 
 import com.qa.persistence.domain.Account;
 
 public interface IAccountEndpoint {
 
-	public Collection<Account> getAllAccounts();
+	public Iterable<Account> getAllAccounts();
 
-	public Account findAccount(Long id);
+	public Optional<Account> findAccount(Long id);
 
-	public String createAccount(Account account);
+	public Account createAccount(Account account);
 
 	public String updateAccount(Long id, Account account);
 

@@ -1,39 +1,44 @@
 package com.qa.service;
 
-import java.util.Collection;
+import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.qa.constants.AccountConstants;
 import com.qa.persistence.domain.Account;
+import com.qa.persistence.repository.IAccountRepo;
 
+@Service
 public class AccountService implements IAccountService {
 
+	@Autowired
+	private IAccountRepo repo;
+
 	@Override
-	public String createAccount(Account account) {
-		// TODO Auto-generated method stub
-		return null;
+	public Account createAccount(Account account) {
+		return repo.save(account);
 	}
 
 	@Override
 	public String deleteAccount(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		repo.deleteById(id);
+		return AccountConstants.DELETE_ACCOUNT;
 	}
 
 	@Override
 	public String updateAccount(Long id, Account account) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.updateAccount(id, account);
 	}
 
 	@Override
-	public Account findAccount(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Account> findAccount(Long id) {
+		return repo.findById(id);
 	}
 
 	@Override
-	public Collection<Account> getAllAccounts() {
-		// TODO Auto-generated method stub
-		return null;
+	public Iterable<Account> getAllAccounts() {
+		return repo.findAll();
 	}
 
 }

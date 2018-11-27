@@ -1,19 +1,19 @@
 package com.qa.service;
 
-import java.util.Collection;
+import java.util.Optional;
 
 import com.qa.persistence.domain.Account;
 
 public interface IAccountService {
 
-	public String createAccount(Account account);
+	public Account createAccount(Account account);
 
 	public String deleteAccount(Long id);
 
 	public String updateAccount(Long id, Account account);
 
-	public Account findAccount(Long id);
+	public Optional<Account> findAccount(Long id);
 
-	public Collection<Account> getAllAccounts();
+	public Iterable<Account> getAllAccounts();
 
 }
