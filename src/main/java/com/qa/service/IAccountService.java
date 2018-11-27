@@ -10,7 +10,7 @@ public interface IAccountService {
 
 	public String deleteAccount(Long id);
 
-	public Account updateAccount(Long id, Account account);
+	public String updateAccount(Long id, Account account);
 
 	public Account findAccount(Long id);
 

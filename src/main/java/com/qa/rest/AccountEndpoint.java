@@ -47,7 +47,7 @@ public class AccountEndpoint implements IAccountEndpoint {
 	@PutMapping("/update/{id}")
 	public String updateAccount(@PathVariable Long id, @RequestBody Account account) {
 		// TODO Auto-generated method stub
-		return null;
+		return service.updateAccount(id, account);
 	}
 
 	@Override

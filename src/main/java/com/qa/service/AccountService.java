@@ -19,7 +19,7 @@ public class AccountService implements IAccountService {
 	}
 
 	@Override
-	public Account updateAccount(Long id, Account account) {
+	public String updateAccount(Long id, Account account) {
 		// TODO Auto-generated method stub
 		return null;
 	}
