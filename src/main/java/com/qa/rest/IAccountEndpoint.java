@@ -12,8 +12,6 @@ public interface IAccountEndpoint {
 
 	public Account createAccount(Account account);
 
-	public String updateAccount(Long id, Account account);
-
 	public String deleteAccount(Long id);
 
 }

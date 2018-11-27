@@ -26,13 +26,10 @@ public class AccountService implements IAccountService {
 		return AccountConstants.DELETE_ACCOUNT;
 	}
 
-	@Override
-	public String updateAccount(Long id, Account account) {
-		return repo.updateAccount(id, account);
-	}
 
 	@Override
 	public Optional<Account> findAccount(Long id) {
+
 		return repo.findById(id);
 	}
 

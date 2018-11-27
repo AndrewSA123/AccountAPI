@@ -10,8 +10,6 @@ public interface IAccountService {
 
 	public String deleteAccount(Long id);
 
-	public String updateAccount(Long id, Account account);
-
 	public Optional<Account> findAccount(Long id);
 
 	public Iterable<Account> getAllAccounts();
