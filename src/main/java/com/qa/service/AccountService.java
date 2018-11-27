@@ -7,7 +7,7 @@ import com.qa.persistence.domain.Account;
 public class AccountService implements IAccountService {
 
 	@Override
-	public String createAccount(String firstName, String lastName, String accountType) {
+	public String createAccount(Account account) {
 		// TODO Auto-generated method stub
 		return null;
 	}

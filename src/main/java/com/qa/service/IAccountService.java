@@ -6,7 +6,7 @@ import com.qa.persistence.domain.Account;
 
 public interface IAccountService {
 
-	public String createAccount(String firstName, String lastName, String accountType);
+	public String createAccount(Account account);
 
 	public String deleteAccount(Long id);
 
